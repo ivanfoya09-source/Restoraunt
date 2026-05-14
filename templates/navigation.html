@@ -1,0 +1,22 @@
+<div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="{{ url_for('index') }}">Головна сторінка</a>
+      </li>
+      {%- if current_user.is_authenticated %}
+      <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="#">Забронювати столик</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="№">Зробити замовлення</a>
+      </li>
+      {% else %}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="{{ url_for('sign_up') }}">Зареєструватися</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="{{ url_for('sign_in') }}">Увійти</a>
+      </li>
+      {% endif %}
+    </ul>
+</div>
